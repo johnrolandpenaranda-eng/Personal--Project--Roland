@@ -1,0 +1,252 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>Franceland Cakes - Online Reservations</title>  
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      font-family: "Poppins", sans-serif;  
+    }  
+    body {  
+      background-color: #fff8f5;  
+      color: #333;  
+    }  
+    header {  
+      position: relative;  
+      text-align: center;  
+      background: url('https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016990.png') center/cover no-repeat;  
+      height: 300px;  
+      color: white;  
+    }  
+    header .overlay {  
+      background-color: rgba(0, 0, 0, 0.5);  
+      height: 100%;  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: center;  
+    }  
+    header img {  
+      width: 120px;  
+      height: 120px;  
+      border-radius: 50%;  
+      margin: 0 auto;  
+      border: 4px solid white;  
+    }  
+    header h1 {  
+      font-size: 2em;  
+      margin-top: 10px;  
+    }  
+    nav {  
+      background-color: #ffb6c1;  
+      display: flex;  
+      justify-content: center;  
+      gap: 20px;  
+      padding: 10px;  
+    }  
+    nav a {  
+      text-decoration: none;  
+      color: white;  
+      font-weight: bold;  
+      transition: 0.3s;  
+    }  
+    nav a:hover {  
+      color: #8b0000;  
+    }  
+    section {  
+      padding: 40px 20px;  
+      text-align: center;  
+    }  
+    #cakes {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
+      gap: 20px;  
+      padding: 20px;  
+    }  
+    .cake-card {  
+      background-color: #fff0f5;  
+      border-radius: 10px;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+      padding: 15px;  
+      transition: 0.3s;  
+    }  
+    .cake-card:hover {  
+      transform: translateY(-5px);  
+    }  
+    .cake-card img {  
+      width: 100%;  
+      border-radius: 10px;  
+      height: 200px;  
+      object-fit: cover;  
+    }  
+    .cake-card h3 {  
+      margin: 10px 0;  
+      color: #8b0000;  
+    }  
+    select, button, input, textarea {  
+      margin-top: 5px;  
+      padding: 8px;  
+      width: 80%;  
+      border-radius: 5px;  
+      border: 1px solid #ccc;  
+    }  
+    textarea {  
+      height: 60px;  
+      resize: none;  
+    }  
+    button {  
+      background-color: #ff69b4;  
+      color: white;  
+      cursor: pointer;  
+    }  
+    button:hover {  
+      background-color: #ff1493;  
+    }  
+    #about, #contact {  
+      background-color: #ffe4e1;  
+      border-radius: 10px;  
+      margin: 20px;  
+      padding: 20px;  
+    }  
+    footer {  
+      background-color: #ffb6c1;  
+      color: white;  
+      text-align: center;  
+      padding: 15px;  
+      margin-top: 30px;  
+    }  
+    .star {  
+      color: gold;  
+      font-size: 20px;  
+    }  
+    .reserve-form {  
+      margin-top: 15px;  
+      background: #ffe4f1;  
+      padding: 10px;  
+      border-radius: 10px;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="overlay">  
+      <img src="https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016990.png" alt="Profile Picture" />  
+      <h1>Franceland Cakes</h1>  
+      <p>“A Taste of Love in Every Bite.”</p>  
+    </div>  
+  </header>  
+  
+  <nav>  
+    <a href="#home">Home</a>  
+    <a href="#menu">Menu</a>  
+    <a href="#about">About</a>  
+    <a href="#contact">Contact</a>  
+  </nav>  
+  
+  <section id="home">  
+    <h2>Welcome to Franceland Cakes 🎂</h2>  
+    <p>Enjoy delicious, freshly baked cakes for every celebration. Reserve online — our system automatically confirms your order!</p>  
+  </section>  
+  
+  <section id="menu">  
+    <h2>Our Cake Selection ⭐⭐⭐⭐⭐</h2>  
+    <div id="cakes"></div>  
+  </section>  
+  
+  <section id="about">  
+    <h2>About Franceland Cakes</h2>  
+    <p>At Franceland Cakes, we bake happiness for every occasion! 🎂 From birthdays to weddings, our cakes are freshly made daily with love, care, and premium ingredients. Visit us or reserve your favorite cake online — we’ll make your day extra sweet!</p>  
+  </section>  
+  
+  <section id="contact">  
+    <h2>Contact Us</h2>  
+    <p><strong>Shop Name:</strong> Franceland Cakes</p>  
+    <p><strong>Address:</strong> 123 Sweet Street, Manila, Philippines</p>  
+    <p><strong>Email:</strong> francelandcakesh@gmail.com</p>  
+    <p><strong>Contact Number:</strong> +63 912 345 6789</p>  
+  </section>  
+  
+  <footer>  
+    <p>© 2025 Franceland Cakes</p>  
+  </footer>  
+  
+  <script>  
+    const cakes = [  
+      { id: 'choco', name: 'Chocolate Heaven', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016974.jpg', desc: 'Rich chocolate sponge with creamy frosting', prices: ['Small - ₱500','Medium - ₱750','Extra Large - ₱1,200','Family Size - ₱1,800'] },  
+      { id: 'wedding', name: 'Classic White Wedding Cake', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016975.jpg', desc: 'Elegant 3-tier vanilla cake with sugar flowers', prices: ['Small - ₱2,000','Medium - ₱3,500','Extra Large - ₱5,000','Family Size - ₱6,500'] },  
+      { id: 'bday', name: 'Chocolate Birthday Blast', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016976.jpg', desc: 'Fun chocolate cake with sprinkles and candies', prices: ['Small - ₱700','Medium - ₱950','Extra Large - ₱1,500','Family Size - ₱2,200'] },  
+      { id: 'redvelvet', name: 'Red Velvet Bliss', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016977.jpg', desc: 'Velvety red cake layered with cream cheese frosting', prices: ['Small - ₱600','Medium - ₱900','Extra Large - ₱1,400','Family Size - ₱2,000'] },  
+      { id: 'ube', name: 'Ube Supreme', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016978.jpg', desc: 'Classic Filipino purple yam cake with coconut flakes', prices: ['Small - ₱650','Medium - ₱950','Extra Large - ₱1,500','Family Size - ₱2,300'] },  
+      { id: 'mango', name: 'Mango Delight', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016979.jpg', desc: 'Tropical mango chiffon with creamy layers', prices: ['Small - ₱700','Medium - ₱1,000','Extra Large - ₱1,600','Family Size - ₱2,400'] },  
+      { id: 'strawberry', name: 'Strawberry Dream', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016981.jpg', desc: 'Fresh strawberry cake topped with fruit glaze', prices: ['Small - ₱750','Medium - ₱1,050','Extra Large - ₱1,700','Family Size - ₱2,500'] },  
+      { id: 'cheesecake', name: 'Blueberry Cheesecake', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016982.jpg', desc: 'Rich cheesecake with blueberry topping', prices: ['Small - ₱800','Medium - ₱1,200','Extra Large - ₱1,800','Family Size - ₱2,600'] },  
+      { id: 'mocha', name: 'Mocha Crunch', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016983.jpg', desc: 'Coffee-flavored cake with caramel drizzle', prices: ['Small - ₱650','Medium - ₱950','Extra Large - ₱1,450','Family Size - ₱2,100'] },  
+      { id: 'leche', name: 'Leche Flan Cake', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016984.jpg', desc: 'Moist vanilla sponge topped with creamy flan', prices: ['Small - ₱700','Medium - ₱1,100','Extra Large - ₱1,600','Family Size - ₱2,300'] },  
+      { id: 'cookies', name: 'Cookies and Cream', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016985.jpg', desc: 'Chocolate cake blended with crushed cookies', prices: ['Small - ₱750','Medium - ₱1,050','Extra Large - ₱1,700','Family Size - ₱2,500'] },  
+      { id: 'blackforest', name: 'Black Forest Classic', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016986.jpg', desc: 'Chocolate cherry layered cake with whipped cream', prices: ['Small - ₱850','Medium - ₱1,250','Extra Large - ₱1,900','Family Size - ₱2,700'] },  
+      { id: 'caramel', name: 'Caramel Delight', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016987.jpg', desc: 'Golden caramel glaze on a soft sponge cake', prices: ['Small - ₱700','Medium - ₱1,000','Extra Large - ₱1,600','Family Size - ₱2,300'] },  
+      { id: 'tiramisu', name: 'Tiramisu Love', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016988.jpg', desc: 'Italian tiramisu layered with cocoa and mascarpone', prices: ['Small - ₱900','Medium - ₱1,400','Extra Large - ₱2,000','Family Size - ₱2,900'] },  
+      { id: 'matcha', name: 'Matcha Green Tea Cake', img:'https://uploads.onecompiler.io/43yhwbaut/43yhwz8s3/1000016989.jpg', desc: 'Soft matcha-flavored cake with white chocolate topping', prices: ['Small - ₱800','Medium - ₱1,100','Extra Large - ₱1,800','Family Size - ₱2,600'] }  
+    ];  
+  
+    const cakeContainer = document.getElementById('cakes');  
+  
+    cakes.forEach(cake => {  
+      const div = document.createElement('div');  
+      div.className = 'cake-card';  
+      div.innerHTML = `  
+        <img src="${cake.img}" alt="${cake.name}">  
+        <h3>${cake.name} <span class="star">⭐⭐⭐⭐⭐</span></h3>  
+        <p>${cake.desc}</p>  
+        <select id="size-${cake.id}">  
+          ${cake.prices.map(p => `<option value="${p}">${p}</option>`).join('')}  
+        </select>  
+        <div class="reserve-form">  
+          <input type="text" id="name-${cake.id}" placeholder="Full Name" required>  
+          <input type="text" id="phone-${cake.id}" placeholder="Phone Number" required>  
+          <input type="email" id="email-${cake.id}" placeholder="Gmail" required>  
+          <input type="text" id="address-${cake.id}" placeholder="Address" required>  
+          <textarea id="notes-${cake.id}" placeholder="Notes (optional)"></textarea>  
+          <input type="date" id="date-${cake.id}" required>  
+          <input type="time" id="time-${cake.id}" required>  
+          <button onclick="placeOrder('${cake.name}', 'size-${cake.id}', 'name-${cake.id}', 'phone-${cake.id}', 'email-${cake.id}', 'address-${cake.id}', 'notes-${cake.id}', 'date-${cake.id}', 'time-${cake.id}')">Reserve</button>  
+        </div>  
+      `;  
+      cakeContainer.appendChild(div);  
+    });  
+  
+    function placeOrder(cakeName, sizeId, nameId, phoneId, emailId, addressId, notesId, dateId, timeId) {  
+      const size = document.getElementById(sizeId).value;  
+      const name = document.getElementById(nameId).value;  
+      const phone = document.getElementById(phoneId).value;  
+      const email = document.getElementById(emailId).value;  
+      const address = document.getElementById(addressId).value;  
+      const notes = document.getElementById(notesId).value || "None";  
+      const date = document.getElementById(dateId).value;  
+      const time = document.getElementById(timeId).value;  
+  
+      if (!name || !phone || !email || !address || !date || !time) {  
+        alert("❗ Please fill out all required fields before reserving.");  
+        return;  
+      }  
+  
+      alert(  
+        "🎂 Reservation Confirmed!\n\n" +  
+        "🧁 Cake: " + cakeName + "\n" +  
+        "📏 Size & Price: " + size + "\n" +  
+        "👤 Name: " + name + "\n" +  
+        "🏠 Address: " + address + "\n" +  
+        "📞 Phone: " + phone + "\n" +  
+        "✉️ Gmail: " + email + "\n" +  
+        "📝 Notes: " + notes + "\n" +  
+        "📅 Delivery Date: " + date + "\n" +  
+        "⏰ Delivery Time: " + time + "\n\n" +  
+        "Thank you for choosing Franceland Cakes! 💕"  
+      );  
+    }  
+  </script>  
+</body>  
+</html>
